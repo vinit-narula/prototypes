@@ -1,0 +1,21 @@
+package com.vna.java8;
+import java.util.*;
+
+public class LambdaExample {
+    public static void main(String[] args) {
+        List<Integer> numbers = Arrays.asList(5, 2, 8, 1, 6);
+
+        // Sorting using anonymous class
+        Collections.sort(numbers, new Comparator<Integer>() {
+            @Override
+            public int compare(Integer a, Integer b) {
+                return a.compareTo(b);
+            }
+        });
+        System.out.println("Sorted numbers (using anonymous class): " + numbers);
+
+        // Sorting using lambda expression
+        Collections.sort(numbers, (a, b) -> a.compareTo(b));
+        System.out.println("Sorted numbers (using lambda expression): " + numbers);
+    }
+}
