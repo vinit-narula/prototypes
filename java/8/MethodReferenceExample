@@ -1,0 +1,31 @@
+import java.util.Arrays;
+import java.util.List;
+
+public class MethodReferenceExample {
+    public static void main(String[] args) {
+        List<String> names = Arrays.asList("Alice", "Bob", "Charlie", "David", "Emily");
+
+        // Example 1: Using a static method reference
+        names.forEach(MethodReferenceExample::printName);
+
+        // Example 2: Using an instance method reference
+        MethodReferenceExample instance = new MethodReferenceExample();
+        names.forEach(instance::printNameInstance);
+
+        // Example 3: Using a constructor reference
+        List<Integer> lengths = names.stream()
+                .map(String::length)
+                .toList();
+        System.out.println("Lengths of names: " + lengths);
+    }
+
+    // Static method for Example 1
+    public static void printName(String name) {
+        System.out.println("Name: " + name);
+    }
+
+    // Instance method for Example 2
+    public void printNameInstance(String name) {
+        System.out.println("Name (instance method): " + name);
+    }
+}
