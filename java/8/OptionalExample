@@ -1,0 +1,42 @@
+package com.vna.java8;
+
+import java.util.Optional;
+
+public class OptionalExample {
+    public static void main(String[] args) {
+        // Example 1: Creating an Optional with a non-null value
+        Optional<String> optionalName = Optional.of("John");
+
+        // Example 2: Creating an empty Optional
+        Optional<String> emptyOptional = Optional.empty();
+
+        // Example 3: Creating an Optional with a potentially null value
+        String nullableName = null;
+        Optional<String> optionalNullableName = Optional.ofNullable(nullableName);
+
+        // Example 4: Retrieving the value from an Optional
+        String name = optionalName.get();
+            System.out.println("Name: " + name);
+
+        // Example 5: Checking if an Optional contains a value
+        if (emptyOptional.isEmpty()) {
+            System.out.println("The emptyOptional is empty.");
+        }
+
+        // Example 6: Using orElse to provide a default value
+        String defaultName = emptyOptional.orElse("Default");
+        System.out.println("Default name: " + defaultName);
+
+        // Example 7: Using orElseGet to provide a default value using a supplier
+        String anotherDefaultName = emptyOptional.orElseGet(() -> "Another Default");
+        System.out.println("Another default name: " + anotherDefaultName);
+
+        // Example 8: Using map to transform the value of an Optional
+        Optional<String> upperCaseNameOptional = optionalName.map(String::toUpperCase);
+        upperCaseNameOptional.ifPresent(upperCaseName -> System.out.println("Upper case name: " + upperCaseName));
+
+        // Example 9: Using filter to apply a predicate to the value of an Optional
+        Optional<String> filteredOptional = optionalName.filter(n -> n.startsWith("J"));
+        filteredOptional.ifPresent(filteredName -> System.out.println("Filtered name: " + filteredName));
+    }
+}
