@@ -1,0 +1,17 @@
+package com.vna.java8;
+
+// Functional interface with a single abstract method
+@FunctionalInterface
+interface MyFunctionalInterface {
+    void myMethod(String s);
+}
+
+public class FunctionalInterfaceLambdaExample {
+    public static void main(String[] args) {
+        // Using a lambda expression to implement the abstract method of the functional interface
+        MyFunctionalInterface functionalInterface = (s) -> System.out.println("Hello, " + s);
+
+        // Invoking the method defined by the functional interface using the lambda expression
+        functionalInterface.myMethod("World");
+    }
+}
