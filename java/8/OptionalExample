@@ -14,7 +14,7 @@ public class OptionalExample {
         String nullableName = null;
         Optional<String> optionalNullableName = Optional.ofNullable(nullableName);
 
-        // Example 4: Retrieving the value from an Optional
+        // Example 4: Retrieving the value from an Optional.
         String name = optionalName.get();
             System.out.println("Name: " + name);
 
