@@ -8,7 +8,7 @@ public class MethodReferenceExample {
         // Example 1: Using a static method reference
         names.forEach(MethodReferenceExample::printName);
 
-        // Example 2: Using an instance method reference
+        // Example 2: Using an instance method reference.
         MethodReferenceExample instance = new MethodReferenceExample();
         names.forEach(instance::printNameInstance);
 
